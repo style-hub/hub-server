@@ -6,7 +6,7 @@ The Source you will use on your server is located in the "source" folder.
 
 ## Setup Server
 
-setup.md
+[Setup instructions](https://github.com/style-hub/hub-server/blob/master/setup-server.md)
 
 ## Project goals
 
