@@ -36,17 +36,10 @@ Simple to search or browse, preview and download. Form based user contributions 
 
 ## Project todo list
 
-* Structure!
-* Contributor input (table rows)
-  * Style Name, styleName, Text
-  * Style Description, styleDescription, Text
-  * Contributor Name, contributorName, Text
-  * Style Preview, stylePreview, Text/url (image uploaded to server ./images)
-  * Style XML, styleXml, Text/url (file uploaded to server ./resources)
-  * Probably a lot more columns like date/time, approval, category, etc...
-* Upload form and scripts
-* Landing site
-* Filter and search
+* Project Structure!
+* Landing site 
+* Filter and search using PHP
+* When most is working with the "Style Hub", start on "Layout Hub"
 
 ## Why not use the Resource Sharing Plugin?
 
