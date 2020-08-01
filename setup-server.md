@@ -2,7 +2,7 @@
 
 Linux-Apache-MySQL-PHP (LAMP)
 
-1. Install Ubuntu Server
+## Install Ubuntu Server  
 
 Include SSH Server
 
@@ -18,7 +18,7 @@ sudo ufw allow in "OpenSSH"
 sudo ufw enable
 ```
 
-2. Install Apache web server
+## Install Apache web server
 
 ```
 sudo apt install apache2
@@ -44,7 +44,7 @@ Verify Apache server running from web browser on the network.
 http://[ip address]
 ```
 
-3. Install and setup MySQL
+## Install and setup MySQL
 ```
 sudo apt install mysql-serve
 sudo mysql_secure_installation
@@ -52,7 +52,7 @@ sudo mysql_secure_installation
 
 You choose if you want/need the security that is initiated by the seccond command.
 
-4. Install PHP
+## Install PHP
 ```
 sudo apt install php libapache2-mod-php php-mysql
 ```
@@ -62,7 +62,7 @@ Verify installation
 php -v
 ```
 
-5. Set up a "domain" to work in. Leaving the default for anything else.
+## Set up a "domain" to work in. Leaving the default for anything else.
 ```
 sudo mkdir /var/www/hub
 sudo chown -R $USER:$USER /var/www/hub
@@ -125,7 +125,7 @@ phpinfo();
 
 Now, again, verify the server from external browser.
 
-6. Set up MySQL database
+## Set up MySQL database
 
 In the example using:
 User : user (replace)
@@ -146,7 +146,7 @@ mysql -u user -p
 SHOW DATABASES;
 ```
 
-The table to use will be developed later, so for now create a test table
+The table to use will be added later, so for now create a test table
 ```
 CREATE TABLE hub.test (
     item_id INT AUTO_INCREMENT,
