@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
     $database = 'hub';
-    $db_table = 'test';
+    $db_table = 'styles';
     $db_user = 'user';
-    $db_password = 'VE#48rw!';
+    $db_password = '1#Password';
 ?>
 <html>
 <head>
@@ -55,8 +55,8 @@
         </div>
         <div class="navbar navbar-dark bg-dark shadow-sm">
           <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <strong>QGIS Style-Hub</strong>
+            <a href="../" class="navbar-brand d-flex align-items-center">
+                <strong>QGIS Hub</strong>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -83,16 +83,16 @@
       <?php
         try {
             $db = new PDO("mysql:host=localhost;dbname=$database", $db_user, $db_password);
-            foreach($db->query("SELECT content FROM $db_table") as $row) {
+            foreach($db->query("SELECT * FROM $db_table") as $row) {
 
 
 
 
-        $styleName = 'Test';
-        $styleDescription = $row['content'];
-        $imageUrl = 'images/image.png';
-        $styleUrl = 'resources/style.xml';
-        $styleCreator = 'Klas Karlsson';
+        $styleName = $row['stylename'];
+        $styleDescription = $row['styledescription'];
+        $imageUrl = $row['stylepreview'];
+        $styleUrl = $row['stylexml'];
+        $styleCreator = $row['stylecreator'];
 
       ?>
 
@@ -102,7 +102,7 @@
             <div class="card-header"><?php echo $styleName ?></div>
             
             <div class="card-body">
-              <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="<?php echo $styleName ?>"><img class="img-fluid" alt="Responsive image" src="<?php echo $imageUrl ?>"></button>
+              <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="<?php echo $imageUrl ?>"><img class="img-fluid" alt="Responsive image" src="<?php echo $imageUrl ?>"></button>
 
               <p class="card-text"><?php echo $styleDescription ?></p>
               <div class="d-flex justify-content-between align-items-center">
@@ -119,7 +119,7 @@
 
         <?php
                     }
-                    echo "</ol>";
+                    
                   } catch (PDOException $e) {
                       print "Error!: " . $e->getMessage() . "<br/>";
                       die();
@@ -138,7 +138,7 @@
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalLabel">Image Preview</h5>
+        <h5 class="modal-title" id="modalLabel">Style Preview</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -156,10 +156,9 @@
 
 $('#modal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var stylename = button.data('whatever') // Extract info from data-* attributes
+  var stylepreview = button.data('whatever') // Extract info from data-* attributes
   var modal = $(this)
-  modal.find('.modal-title').text('Preview ' + stylename)
-  modal.find('.modal-body img').attr('src','style-dir/' + stylename + '.png')
+  modal.find('.modal-body img').attr('src', stylepreview)
 })
 </script>
 <!-- /Image Modal -->
