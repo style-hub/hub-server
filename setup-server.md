@@ -129,13 +129,13 @@ Now, again, verify the server from external browser.
 
 In the example using:
 User : user (replace)
-Password : password (replace)
+Password : 1#Password (replace)
 Database : hub
 
 ```
 sudo mysql
 CREATE DATABASE hub;
-CREATE USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+CREATE USER 'user'@'%' IDENTIFIED WITH mysql_native_password BY '1#Password';
 GRANT ALL ON hub.* TO 'user'@'%';
 exit
 ```
@@ -166,7 +166,7 @@ Create a test php in /var/www/hub/
 ```
 <?php
 $user = "example_user";
-$password = "password";
+$password = "1#Password";
 $database = "example_database";
 $table = "todo_list";
 
