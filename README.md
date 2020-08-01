@@ -20,6 +20,8 @@ Build a web site with hubs that manage community contributed files for style, la
 
 The goal is to create a site that requires very little from the contributor and makes it as effortless at possible to download and use the resources.
 
+Simple to search or browse, preview and download. Form based user contributions with minimal work required.
+
 ## Project todo list
 
 * Structure!
