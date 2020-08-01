@@ -1,12 +1,18 @@
-# hub-server
+# Hub Server
 
-This is a repository that guides you through the setup to generate a server that will work with the source on this site.
+The Hub Server is a community portal for sharing single file resources for QGIS. It requires minimum effort to share files, and is simple to browse and download the resources to your personal QGIS installation.
+
+To setup the server you will need a 'LAMP' server (Linux, Apache, MySQL, PHP) or equivalent. There's a separate instruction for how you can setup a server on Ubuntu Linux further down.
 
 The Source you will use on your server is located in the "source" folder.
+
+There's also instructions for how the database and tables should be setup.
 
 ## Setup Server
 
 [Setup instructions](https://github.com/style-hub/hub-server/blob/master/setup-server.md)
+
+__TODO: Database Setup__
 
 ## Project goals
 
@@ -14,9 +20,23 @@ Build a web site with hubs that manage community contributed files for style, la
 
 The goal is to create a site that requires very little from the contributor and makes it as effortless at possible to download and use the resources.
 
-## Project goals
+## Project todo list
 
 1. Structure!!!
+
+1. Contributor input (table rows)
+  * Style Name, styleName, Text
+  * Style Description, styleDescription, Text
+  * Contributor Name, contributorName, Text
+  * Style Preview, stylePreview, Text/url (image uploaded to server ./images)
+  * Style XML, styleXml, Text/url (file uploaded to server ./resources)
+  * Probably a lot more columns like date/time, approval, category, etc...
+
+1. Upload form and scripts
+
+1. Landing site
+
+1. Filter and search
 
 ## Why not use the Resource Sharing Plugin?
 
