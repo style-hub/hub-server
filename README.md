@@ -10,9 +10,21 @@ There's also instructions for how the database and tables should be setup.
 
 ## Setup Server
 
+For the development a standard database user is created.
+
+User: _user_
+
+Password: _1#Password_
+
 [Setup instructions](https://github.com/style-hub/hub-server/blob/master/setup-server.md)
 
-__TODO: Database Setup__
+To create tables in the database, use the _mysql_setup.sql_ script.
+
+'''
+mysql -u user -p < mysql_setup.sql
+'''
+
+Note that uploads of files to the server only works if the folders are set with sufficient permissions to "write". __(Warning)__
 
 ## Project goals
 
