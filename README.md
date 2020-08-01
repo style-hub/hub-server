@@ -22,22 +22,18 @@ The goal is to create a site that requires very little from the contributor and 
 
 ## Project todo list
 
-1. Structure!!!
-
-1. Contributor input (table rows)
+* Structure!
+* Contributor input (table rows)
   * Style Name, styleName, Text
   * Style Description, styleDescription, Text
   * Contributor Name, contributorName, Text
   * Style Preview, stylePreview, Text/url (image uploaded to server ./images)
   * Style XML, styleXml, Text/url (file uploaded to server ./resources)
   * Probably a lot more columns like date/time, approval, category, etc...
-
-1. Upload form and scripts
-
-1. Landing site
-
-1. Filter and search
+* Upload form and scripts
+* Landing site
+* Filter and search
 
 ## Why not use the Resource Sharing Plugin?
 
-This is NOT a replacement for the plugin. But it is a way to significantly lower the bar for the majority of ordinary users to contribute, but also find and download the resources. Some resources is deffinetly not suitable to manage with a "hub" site. And the resources on a hub could easily be pulled to a resource sharing repository and shared that way too.
+This is NOT a replacement for the plugin. But it is a way to significantly lower the bar for the majority of ordinary users to contribute, but also find and download the resources. Some resources is definitely not suitable to manage with a "hub" site. And the resources on a hub could easily be pulled to a resource sharing repository and shared that way too.
