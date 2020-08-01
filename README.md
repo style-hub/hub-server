@@ -4,13 +4,11 @@ The Hub Server is a community portal for sharing single file resources for QGIS.
 
 To setup the server you will need a 'LAMP' server (Linux, Apache, MySQL, PHP) or equivalent. There's a separate instruction for how you can setup a server on Ubuntu Linux further down.
 
-The Source you will use on your server is located in the "source" folder.
-
-There's also instructions for how the database and tables should be setup.
+The code you will use on your server (/var/www/hub/) is located in the "source" folder.
 
 ## Setup Server
 
-For the development a standard database user is created.
+For the development a standard database user is used.
 
 User: _user_
 
@@ -34,11 +32,19 @@ The goal is to create a site that requires very little from the contributor and 
 
 Simple to search or browse, preview and download. Form based user contributions with minimal work required.
 
+There will likely be a need for some contributor verification, but it should be kept at a minimum.
+
 ## Project todo list
 
-* Project Structure!
+* Project Structure!  
+  * Style guides?
+  * Desigh guides? (How should the code look)
 * Landing site 
+  * Multiple hubs
+  * Similar content and use
+  * One place to land and get instructions
 * Filter and search using PHP
+  * Probably also database table expansion
 * When most is working with the "Style Hub", start on "Layout Hub"
 
 ## Why not use the Resource Sharing Plugin?
