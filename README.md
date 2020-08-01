@@ -39,3 +39,11 @@ Simple to search or browse, preview and download. Form based user contributions 
 ## Why not use the Resource Sharing Plugin?
 
 This is NOT a replacement for the plugin. But it is a way to significantly lower the bar for the majority of ordinary users to contribute, but also find and download the resources. Some resources is definitely not suitable to manage with a "hub" site. And the resources on a hub could easily be pulled to a resource sharing repository and shared that way too.
+
+## Contribute to the project
+
+You can fork and create pull requests as usual for a GitHub project.
+
+If you want to engage more you can become a developer with direct commit rights.
+
+(But in that case I guess we need to create more guidelines for the goal of the project.)
