@@ -14,7 +14,7 @@ User: _user_
 
 Password: _1#Password_
 
-[Setup instructions](https://github.com/style-hub/hub-server/blob/master/setup-server.md)
+[Setup server instructions](https://github.com/style-hub/hub-server/blob/master/setup-server.md)
 
 To create tables in the database, use the _mysql_setup.sql_ script.
 
