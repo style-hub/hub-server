@@ -1,9 +1,10 @@
 <?php
 
-            $servername = 'localhost';
-            $username = 'user';
-            $password = '1#Password';
-            $dbname = 'hub';
+            $db_server = 'localhost';
+            $db_user = 'user';
+            $db_password = '1#Password';
+            $database = 'hub';
+            $db_table = 'styles';
 
             
             $style_name = style_input($_POST["styleName"]);
@@ -92,23 +93,38 @@
                 $styeo_delete = FALSE;
             }
             // Create connection to MySQL server
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            $conn = new mysqli($db_server, $db_user, $db_password, $database);
             // Check connection
             if ($conn->connect_error) {
               die("Connection to database failed: " . $conn->connect_error);
             }
 
             if ($style_delete) {
-                $sql = "DELETE FROM hub.styles
+                foreach ($conn->query("SELECT * FROM $database.$db_table WHERE id = $style_id") as $row) {
+                    $style_xml = $row['stylexml'];
+                    $style_preview = $row['stylepreview'];
+                }
+                if(!unlink($style_xml)) {
+                    echo ("Xml file could not be deleted!<br>");
+                } else {
+                    echo ("Xml file deleted<br>");
+                }
+                if(!unlink($style_preview)) {
+                    echo ("Preview file could not be deleted!<br>");
+                } else {
+                    echo ("Preview file deleted<br>");
+                }
+
+                $sql = "DELETE FROM $database.$db_table
                 WHERE id = $style_id";
             } else if ($style_id >> 0) {
-                $sql = "UPDATE hub.styles SET 
+                $sql = "UPDATE $database.$db_table SET 
                     stylename='$style_name', 
                     stylecreator='$style_creator', 
                     styledescription='$style_description'
                 WHERE id = $style_id";
             } else{
-                $sql = "INSERT INTO hub.styles (stylename, stylecreator, styledescription, stylexml, stylepreview)
+                $sql = "INSERT INTO $database.$db_table (stylename, stylecreator, styledescription, stylexml, stylepreview)
                 VALUES ('" . $style_name . "', '" . $style_creator . "', '" . $style_description . "', '" . $style_file . "', '" . $image_file . "')";
             }
             if ($conn->query($sql) === TRUE) {
@@ -119,7 +135,7 @@
                 } else { 
                     $responce = 'created';
                 }
-              echo "New record $responce successfully";
+              echo "New record $responce successfully<br>";
               echo "Your submission should now be visible on the <a href='index.php'>Style Hub</a>";
             } else {
               echo "Error: " . $sql . "<br>" . $conn->error;
@@ -129,5 +145,10 @@
         
     
         ?>
+        <script>
+            setTimeout(() => { 
+                window.location = "index.php";
+            }, 2000);
+        </script>
 
     

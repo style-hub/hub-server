@@ -39,8 +39,11 @@
             <div class="row">
               <div class="col-sm-8 col-md-7 py-4">
                 <h4 class="text-white">About</h4>
-                <p class="text-muted">Here you can browse free styles for QGIS. All styles are downloadable, or you can copy the style urls and use them in QGIS to import the styles. If you want you can submit your own styles to this repository and they will be included, pending time and a quick review.<br>
-                <br>This is a static DEMO site and not a permanent solution. That should include a "submit" form for easy contributing, search and filters, showing dynamic content. This requires an active server with PHP, database, etc.</p>
+                <p class="text-muted">Here you can browse free styles for QGIS. 
+                All styles are downloadable, or you can copy the style urls and use them in QGIS to import the styles.<br>
+                <br>This is a DEMO site and not a permanent solution. 
+                It is under sporadic development and you can join the effort on GitHub. 
+                The server requires a secure webserver (HTTPS), PHP and MySQL database to function properly.</p>
               </div>
               <div class="col-sm-4 offset-md-1 py-4">
                 <h4 class="text-white">Contact</h4>
@@ -71,7 +74,7 @@
           <div class="container">
             <h1>Style Hub</h1>
             <p class="lead text-muted">Collections of free to use QGIS style xml-files to download and import. 
-              To use the url, click the copy button, then paste the url in QGIS style manager import dialogue.
+              To use the url, click the copy button<sup>1</sup>, then paste the url in QGIS style manager import dialogue.
             </p>
             <a href="edit.php" type="button" class="btn btn-primary">Submit Style</a>
           </div>
@@ -176,6 +179,7 @@ $('#modal').on('show.bs.modal', function (event) {
     <p class="float-right">
       <a href="#">Back to top</a>
     </p>
+    <p><sup>1</sup> Copy Url button only works for HTTPS hosting. Use right-click copy on XML button instead.</p>
     <p>What is QGIS? <a href="https://qgis.org/">Visit the QGIS homepage</a> or read the <a href="https://docs.qgis.org/3.10/en/docs/user_manual/style_library/style_manager.html">Documentation</a> on styling.</p>
   </div>
 </footer>
