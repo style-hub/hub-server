@@ -123,7 +123,7 @@
         try { // Try connect to database
             $db = new PDO("mysql:host=$db_server;dbname=$database", $db_user, $db_password);
             if(!$searchstring){
-              $sql = "SELECT * FROM $db_table";
+              $sql = "SELECT * FROM $db_table ORDER BY id DESC";
             } else {
               $sql = "SELECT * FROM $db_table WHERE styledescription LIKE '%$searchstring%' OR stylename LIKE '%$searchstring%'";
             }
