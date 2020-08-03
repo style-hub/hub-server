@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+    $db_server = 'localhost';
     $database = 'hub';
     $db_table = 'styles';
     $db_user = 'user';
@@ -72,7 +73,7 @@
             <p class="lead text-muted">Collections of free to use QGIS style xml-files to download and import. 
               To use the url, click the copy button, then paste the url in QGIS style manager import dialogue.
             </p>
-            <a href="submit.php" type="button" class="btn btn-primary">Submit Style</a>
+            <a href="edit.php" type="button" class="btn btn-primary">Submit Style</a>
           </div>
         </section>
       
@@ -82,12 +83,13 @@
 
       <?php
         try {
-            $db = new PDO("mysql:host=localhost;dbname=$database", $db_user, $db_password);
+            $db = new PDO("mysql:host=$db_server;dbname=$database", $db_user, $db_password);
             foreach($db->query("SELECT * FROM $db_table") as $row) {
 
 
 
 
+        $styleId = $row['id'];
         $styleName = $row['stylename'];
         $styleDescription = $row['styledescription'];
         $imageUrl = $row['stylepreview'];
@@ -96,12 +98,18 @@
 
       ?>
 
-        <!-- This should be repeated for all styles with php -->
+        <!-- This is repeated for all styles with php -->
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <div class="card-header"><?php echo $styleName ?></div>
-            
+          <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <?php echo $styleName ?>
+            <a href="edit.php?id=<?php echo $styleId ?>">
+              <span class="badge badge-light">...</span>
+            </a>
+          </div></div>
             <div class="card-body">
+            
               <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="<?php echo $imageUrl ?>"><img class="img-fluid" alt="Responsive image" src="<?php echo $imageUrl ?>"></button>
 
               <p class="card-text"><?php echo $styleDescription ?></p>
