@@ -1,5 +1,6 @@
 <?php
   require('header.php');
+  $_SESSION['current_page'] = 'index.php';
 ?>
 
 <main role="main">
@@ -12,7 +13,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+        <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="include/carousel_bg_styles.jpg">
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>Style Hub</h1>
@@ -22,7 +23,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="include/carousel_bg_layouts.jpg">
         <div class="container">
           <div class="carousel-caption">
             <h1>Layout Hub</h1>
@@ -62,7 +63,7 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140" src="include/marketing_bg_styles.png"><title>Placeholder</title>
         <h2>Style Hub</h2>
         <p>Styles are xml-files that is easy to share between QGIS users.
         You import and export the style-xml from the QGIS Style Manager.</p>
@@ -89,6 +90,36 @@
     
 
   </div><!-- /.container -->
+
+  <div class="container">
+  <div class="row">
+  <div class="col-md-6">
+    <h2>Style-Hub</h2>
+    <p>Styles in QGIS are great! If you want to share your styles with others, then the Style-Hub is one
+    simple way to do this. You can browse and search the hub, or login/sign up and submit your own styles.</p>
+    <p>The best styles to submit are either "single" styles, or styles that belong togeather. A huge group 
+    of styles will be really hard to overview for other users. All styles submitted must be releasable under 
+    the Creative Commons 0 (CC-0) license. Which essentially mean it will be Public Domain.</p>
+    <p>Your style should be "self contained", and any SVG-markers should be "embedded" in the style. 
+    If you use font markers, try to remember to name the used font in the style description when 
+    you upload it. Export your styles from the QGIS Style Manager as xml-files, and capture a nice image (max 500kb) 
+    in jpg or png format that shows of your style in a nice way. Then submit it to the hub.</p>
+  </div>
+
+  <div class="col-md-6">
+    <h2>Future of the site</h2>
+    <p>This site is a work in progress! At any time things may change, and the hosting is not fixed. 
+    If the community finds the hub usefull, it is the developers ambition (wish), that it may be included 
+    in the official QGIS site at <a href="https://qgis.org">qgis.org</a> and that continued maintenance
+    and developement can be done by a larger group of volunteers.</p>
+    <p>All code and documentation is located on GitHub where a "project" has been started, and for now it's easy 
+    to add additional developers that are interested in working with the site.</p>
+    <p>If you are interested you can find me on Twitter <a href="https://twitter.com/klaskarlsson">@klaskarlsson</a>
+    and the GitHub repository is located at <a href="https://github.com/style-hub/hub-server">GitHub.com/style-hub/hub-server</a>
+    </p>
+  </div>
+  </div><!-- row -->
+  </div><!-- container -->
   </main>
 
 <?php

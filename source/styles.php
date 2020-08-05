@@ -1,6 +1,7 @@
 <?php
     require('header.php');
     require('include/db_connect.inc.php');
+    $_SESSION['current_page'] = 'styles.php';
 ?>
 
       
@@ -77,6 +78,7 @@
               $imageUrl = $row['stylepreview'];
               $styleUrl = $row['stylexml'];
               $styleCreator = $row['stylecreator'];
+              $styleUsername = $row['byuser'];
          
 
       ?>
@@ -86,10 +88,15 @@
           <div class="card mb-4 shadow-sm">
           <div class="card-header">
           <div class="d-flex justify-content-between align-items-center">
-            <?php echo $styleName ?>
-            <a href="edit.php?id=<?php echo $styleId ?>">
-              <span class="badge badge-light">...</span>
+            <?php echo $styleName; 
+              if($_SESSION['username'] == $styleUsername){
+            ?>
+            <a href="style_edit.php?id=<?php echo $styleId ?>">
+              <span class="badge badge-light">EDIT</span>
             </a>
+            <?php
+              }
+            ?>
           </div></div>
           <div class="card-body">
             <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="<?php echo $imageUrl ?>"><img class="img-fluid" alt="Responsive image" src="<?php echo $imageUrl ?>"></button>

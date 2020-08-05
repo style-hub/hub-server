@@ -1,5 +1,6 @@
 <?php
     require('header.php');
+    $_SESSION['current_page'] = 'signup.php';
 ?>
 
       <main role="main">

@@ -58,3 +58,13 @@ You can fork and create pull requests as usual for a GitHub project.
 If you want to engage more you can become a developer with direct commit rights.
 
 (But in that case I guess we need to create more guidelines for the goal of the project.)
+
+## Site structure
+
+In the _root_ folder (source) the main file is _index.php_. All pages, including _index.php_ use the _header.php_ and _footer.php_.
+
+In the _include_ folder there's mostly pure php files. These manage tasks like updata a database, add a style to the database, upload a file, add a user, etc.
+
+One important file in _include_ is __db_connect.inc.php__. This is the only place where settings for connecting to the MySQL database needs to be done. All other pages that require the connection "calls" this file with a _require()_ function.
+
+Each _Hub_ also have a folder attached to it. In this folder are uploaded resources connected to the hub located. In the case of _styles_ there's two sub-folders, _images_ and _resources_. In the _images_ folder preview images are located, and in the _resources_ folder the style-xml files are located. These folders need to have appropriate _rights_ set for the upload to work.

@@ -34,12 +34,12 @@
             <div class="form-group col-md-6">
                 <label for="submitStyle">Style XML-file</label>
                 <input type="file" class="form-control-file" id="submitStyle" name="submitStyle">
-                <small id="xmlHelp" class="form-text text-muted">Exported from QGIS style manager.</small>
+                <small id="xmlHelp" class="form-text text-muted">Exported from QGIS style manager (max 500kb).</small>
             </div>
             <div class="form-group col-md-6">
                 <label for="submitPreview">Style Preview (jpg/png)</label>
                 <input type="file" class="form-control-file" id="submitPreview" name="submitPreview">
-                <small id="xmlHelp" class="form-text text-muted">Style preview image.</small>
+                <small id="xmlHelp" class="form-text text-muted">Style preview image (max 500kb).</small>
             </div>
             </div>
             <!-- Style name and user -->
@@ -93,7 +93,7 @@
                     <label class="form-check-label" for="inlineCheckbox1">Legend Patch</label>
                 </div>
             </div>
-            <small id="descriptionHelp" class="form-text text-muted">It will be easier for users if the style files contain only related styles.</small>
+            <small id="descriptionHelp" class="form-text text-muted">It will be easier for users if the style files contain only one styel, or connected styles in a theme.</small>
             </div>
             <div class="form-chech bg-light">
             <div class="form-group form-check">

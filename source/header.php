@@ -54,7 +54,16 @@
       </ul>
       <?php
         if(!$_SESSION['username']){
-        //if not logged in
+          //if not logged in
+          if($_GET['error']=='login_fail'){
+            ?>
+            <form action="include/recover.inc.php" method="POST" class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2 form-control-sm" type="text" placeholder="E-mail" name="email" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="login">Recover</button>
+              <a class="btn btn-outline-info my-2 my-sm-0" href="signup.php">Sign Up</a>
+            </form>
+            <?php
+          } else {
       ?>
       <form action="include/login.inc.php" method="POST" class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2 form-control-sm" type="text" placeholder="Username or E-mail" name="user" aria-label="Search">
@@ -63,6 +72,7 @@
         <a class="btn btn-outline-info my-2 my-sm-0" href="signup.php">Sign Up</a>
       </form>
       <?php
+          }
         } else {
         // if logged in
       ?>
