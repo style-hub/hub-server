@@ -18,9 +18,9 @@ Password: _1#Password_
 
 To create tables in the database, use the _mysql_setup.sql_ script.
 
-'''
+´´´
 mysql -u user -p < mysql_setup.sql
-'''
+´´´
 
 Note that uploads of files to the server only works if the folders are set with sufficient permissions to "write". __(Warning)__
 

@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+      <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="include/carousel_bg_future.jpg">
         <div class="container">
           <div class="carousel-caption text-right">
             <h1>Future Hub</h1>
@@ -70,7 +70,7 @@
         <p><a class="btn btn-secondary" href="styles.php" role="button">Explore &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+      <img class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140" src="include/marketing_bg_layouts.png">
         <h2>Layout Hub</h2>
         <p>Layout Templates are resources that can be shared between QGIS users as files.
         The files are exported from the layout window and you import them by copying the
@@ -78,7 +78,7 @@
         <p><a class="btn btn-secondary" href="layouts.php" role="button">Coming Soon &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+      <img class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140" src="include/marketing_bg_future.png">
         <h2>Future Hub</h2>
         <p>In the hub, there's plenty of room for expansion to new resource areas.
         Commitment by the community will decide how successfull the hub will be, and what it will contain.</p>
@@ -104,6 +104,8 @@
     If you use font markers, try to remember to name the used font in the style description when 
     you upload it. Export your styles from the QGIS Style Manager as xml-files, and capture a nice image (max 500kb) 
     in jpg or png format that shows of your style in a nice way. Then submit it to the hub.</p>
+    <p>Find out more about QGIS styles in the 
+    <a href="https://docs.qgis.org/testing/en/docs/user_manual/style_library/index.html">official documentation</a>.</p>
   </div>
 
   <div class="col-md-6">
@@ -117,6 +119,8 @@
     <p>If you are interested you can find me on Twitter <a href="https://twitter.com/klaskarlsson">@klaskarlsson</a>
     and the GitHub repository is located at <a href="https://github.com/style-hub/hub-server">GitHub.com/style-hub/hub-server</a>
     </p>
+    <p>Not quite ready to accept feature requests yet, but if you find a problem you can open an 
+    <a href="https://github.com/style-hub/hub-server/issues">issue</a> on GitHub.</p>
   </div>
   </div><!-- row -->
   </div><!-- container -->
