@@ -28,6 +28,11 @@
           font-size: 3.5rem;
         }
       }
+
+      .center_div{
+          margin: 0 auto;
+          width:60% /* value of your choice which suits your alignment */
+      }
     </style>
     <!-- Custom styles for templates -->
     <link href="carousel.css" rel="stylesheet">

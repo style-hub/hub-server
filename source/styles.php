@@ -22,38 +22,55 @@
               } else {
             ?>
             <a href="style_submit.php" type="button" name="submit_style" class="btn btn-primary">Submit Style</a>
+            <br><small>We humbly ask you to TEST your style-xml before you upload.</small>
             <?php
               }
             ?>
+
           </div>
         </section>
         
-        <!-- Searching database -->
-        <div class="album py-3 bg-light">
-        <div class="container">
-        <div class="row">
-        <form action="#" method="POST" class="form-inline mx-auto">
-          <div class="form-row mx-auto">
-            <div class="col">
-              <input type="text" class="form-control mb-5" id="searchtext" name="searchtext" placeholder="Search for ...">
+
+        <!-- Searching database form -->
+        <div class="container mb-5">
+          <form action="#" method="POST">
+            <div class="row form-row justify-content-md-center">
+            <div class="col-auto">
+              <input type="text" class="form-control form-control-sm" id="searchtext" name="searchtext" placeholder="Search for ...">
             </div>
-            <div class="col">
-              <button type="submit" name="search" class="btn btn-info mb-2">Search</button>
+            <div class="col-auto">
+              <select class="form-control form-control-sm" name="filter">
+                <option value="">No filter</option>
+                <?php
+                  if($_SESSION['username']){
+                    //if logged in
+                    echo('<option value="username">Your Styles</option>');
+                  }
+                ?>
+                <option value="ismarker">Markers</option>
+                <option value="isline">Lines</option>
+                <option value="isfill">Fills</option>
+                <option value="isramp">Color Ramps</option>
+                <option value="istext">Texts</option>
+                <option value="islabel">Labels</option>
+                <option value="ispatch">Legend Patches</option>
+              </select>
             </div>
-          </div>
-        </form>
-        </div>
-        </div>
-        </div>
-        <?php
-          // If there's a search string, get it.
-          if(isset($_POST['search'])){
-            $searchstring = $_POST['searchtext'];
-          }
-          
-        ?>
+            <div class="col-auto">
+              <select class="form-control form-control-sm" name="sort">
+                <option value="">Newest first</option>
+                <option value="stylename">By Name</option>
+                <option value="id">Oldest first</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <button type="submit" name="search" class="btn btn-info btn-sm">Search/Apply</button>
+            </div>      
+            </div><!-- form-row -->
+          </form>
+        </div><!-- end search div -->
       
-  <div class="album py-2 bg-light">
+  <div class="album py-5 bg-light">
     <div class="container">
       <!--
         This is the main area where styles are listed in a "grid" controlled by Bootstrap
@@ -62,10 +79,34 @@
       <div class="row">
 
       <?php
-        if(!$searchstring){
-            $sql = "SELECT * FROM styles ORDER BY id DESC;";
+        if(isset($_POST['search'])){
+          $searchstring = $_POST['searchtext'];
+        }
+        if(!$_POST['sort']){
+          $sort = " ORDER BY id DESC;";
         } else {
-            $sql = "SELECT * FROM styles WHERE styledescription LIKE '%$searchstring%' OR stylename LIKE '%$searchstring%';";
+          if($_POST['sort']=='stylename'){
+            $sort = " ORDER BY stylename;";
+          } else if ($_POST['sort']=='id'){
+            $sort = " ORDER BY id;";
+          }
+        }
+        if(!$_POST['filter']){
+            $filter = "";
+            $filtered = false;
+          } else {
+          if($_POST['filter']=='username'){
+            $filter = ' AND byuser="'.$_SESSION['username'].'"';
+          } else {
+            $filter = ' AND '.$_POST['filter'].'=1';
+          }
+          $filtered = true;
+        }
+        if(!$searchstring){
+            $sql = "SELECT * FROM styles WHERE id>0".$filter.$sort;
+        } else {
+          $filtered = true;
+          $sql = "SELECT * FROM styles WHERE (styledescription LIKE '%".$searchstring."%' OR stylename LIKE '%".$searchstring."%') ".$filter.$sort;
         }
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
@@ -115,9 +156,20 @@
 
         <?php
           } } 
-            
+          
         ?>
       </div>
+      <?php
+      if($filtered){
+        ?>
+        <div class="container">
+          <div class="row bg-info justify-content-md-center">
+            <small class="text-light">This is a filtered list.</small>
+          </div>
+        </div>
+        <?php
+      }  
+      ?>
     </div>
   </div>
 </main>
@@ -151,8 +203,8 @@ $('#modal').on('show.bs.modal', function (event) {
 })
 </script>
 <!-- Preview Style Modal code ends-->
-<div class="containter mx-auto">
-  <div class="row mx-auto">
+<div class="containter mt-3">
+  <div class="row justify-content-md-center">
     <small class="text-muted mx-auto"><sup>1</sup> Copy button only works with https hosting. Use rightclick and copy with the XML-button as workaround.</small>
   </div>
 </div>
