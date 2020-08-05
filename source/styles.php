@@ -63,9 +63,9 @@
 
       <?php
         if(!$searchstring){
-            $sql = "SELECT * FROM $db_table ORDER BY id DESC;";
+            $sql = "SELECT * FROM styles ORDER BY id DESC;";
         } else {
-            $sql = "SELECT * FROM $db_table WHERE styledescription LIKE '%$searchstring%' OR stylename LIKE '%$searchstring%';";
+            $sql = "SELECT * FROM styles WHERE styledescription LIKE '%$searchstring%' OR stylename LIKE '%$searchstring%';";
         }
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);

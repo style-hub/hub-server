@@ -38,7 +38,7 @@ There will likely be a need for some contributor verification, but it should be 
 
 * Project Structure!  
   * Style guides?
-  * Desigh guides? (How should the code look)
+  * Design guides? (How should the code look)
 * Landing site 
   * Multiple hubs
   * Similar content and use

@@ -3,7 +3,6 @@
     // Parameters for MySQL connection.
     $db_server = 'localhost';
     $database = 'hub';
-    $db_table = 'styles';
     $db_user = 'user';
     $db_password = '1#Password';
 

@@ -10,7 +10,7 @@
     $_SESSION['current_page'] = 'style_edit.php';
 
     // Get the edit record
-    $sql = "SELECT * FROM $db_table WHERE id=".$_GET['id'].";";
+    $sql = "SELECT * FROM styles WHERE id=".$_GET['id'].";";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if ($resultCheck == 1) {
