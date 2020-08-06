@@ -13,9 +13,9 @@ $previewfile = $_POST['submitPreview'];
 
 if(isset($_POST['submit'])){
 
-$style_name = $_POST["styleName"];
-$style_creator = $_POST["styleCreator"];
-$style_description = $_POST["styleDescription"];
+$style_name = strip_tags($_POST["styleName"]);
+$style_creator = strip_tags($_POST["styleCreator"]);
+$style_description = strip_tags($_POST["styleDescription"]);
 $ismarker = $_POST['ismarker'];
 $isline = $_POST['isline'];
 $isfill = $_POST['isfill'];

@@ -47,19 +47,19 @@
             <div class="form-group col-md-6">
                 <label for="submitName">Style Name</label>
                 <input type="text" class="form-control" id="submitName" aria-describedby="namelHelp" name="styleName" value="<?php echo($_GET['name']) ?>">
-                <small id="nameHelp" class="form-text text-muted">Identifyable and representable of your style.</small>
+                <small id="nameHelp" class="form-text text-muted">Identifyable and representable of your style. (max 50 chars)</small>
             </div>
             <div class="form-group col-md-6">
                 <label for="submitCreator">Style Creator</label>
                 <input type="text" class="form-control" id="submitCreator" aria-describedby="submitHelp" name="styleCreator" value="<?php echo($_GET['creator']) ?>">
-                <small id="submitHelp" class="form-text text-muted">This is the person who created the style.</small>
+                <small id="submitHelp" class="form-text text-muted">This is the person who created the style. (max 50 chars)</small>
             </div>
             </div>
             <!-- Description of style -->
             <div class="form-group">
                 <label for="submitDescription">Description</label>
                 <textarea class="form-control" id="submitDescription" rows="3" name="styleDescription"><?php echo($_GET['desc']) ?></textarea>
-                <small id="descriptionHelp" class="form-text text-muted">Short description of the style that may help users in searching for the "right one".</small>
+                <small id="descriptionHelp" class="form-text text-muted">Short description of the style that may help users in searching for the "right one". No HTML allowed. (max 255 chars)</small>
             </div>
             <div class="form-group">
             <label for="submitDescription">Style file contains one or more of the folowing type(s):</label>
