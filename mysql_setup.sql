@@ -20,5 +20,6 @@ CREATE TABLE hub.users (
     id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
     useremail VARCHAR(100) NOT NULL,
-    userpwd VARCHAR(255) NOT NULL
+    userpwd VARCHAR(255) NOT NULL,
+    moderator TINYINT(1)
 );

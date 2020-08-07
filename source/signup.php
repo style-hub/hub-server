@@ -56,7 +56,13 @@
             <div class="form-row">
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input<?php if($_GET['error']=='terms'){ echo(" is-invalid");}?>" id="submitCC0" name="terms" value="1" <?php if($_GET['terms']){echo('checked="yes"');} ?>>
-                <label class="form-check-label" for="submitCC0">Terms ......</label>
+                <label class="form-check-label" for="submitCC0">Terms: First of all you need to agree to the 
+                QGIS.org general <a href="https://qgis.org/en/site/getinvolved/governance/codeofconduct/codeofconduct.html">Code of Conduct</a>.
+                You will also try and make sure your uploads are as easy to use as possible. This means any
+                external resources that is required for your uploads to work, that can not be embedded in
+                the uploaded file, should be clearly referenced in the associated description. You also need to
+                accept that your submissions may be moderated or even removed if it is demed inappropriate.
+                </label>
             </div>
             </div>
             <button type="submit" class="btn btn-primary" name="signup">Signup</button>

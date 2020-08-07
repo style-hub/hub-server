@@ -30,6 +30,9 @@ if(isset($_POST['login'])){
                     session_start();
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['usermail'] = $row['useremail'];
+                    if($row['moderator']==1){
+                        $_SESSION['moderator']=true;
+                    }
                     header("Location: ../".$_SESSION['current_page']."?login=successful");
                 }
             } else {

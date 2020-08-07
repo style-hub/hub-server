@@ -29,9 +29,9 @@
         }
       }
 
-      .center_div{
-          margin: 0 auto;
-          width:60% /* value of your choice which suits your alignment */
+      .modal_img {
+        max-width: 80%;
+        max-height: 80%;
       }
     </style>
     <!-- Custom styles for templates -->

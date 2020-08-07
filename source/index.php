@@ -1,4 +1,5 @@
 <?php
+  // include header and set the current page session variable
   require('header.php');
   $_SESSION['current_page'] = 'index.php';
 ?>
@@ -12,7 +13,7 @@
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active"><!-- First and default carousel item -->
         <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="include/carousel_bg_styles.jpg">
         <div class="container">
           <div class="carousel-caption text-left">
@@ -22,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item"><!-- Second carousel item -->
       <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="include/carousel_bg_layouts.jpg">
         <div class="container">
           <div class="carousel-caption">
@@ -32,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item"><!-- Third carousel item -->
       <img class="bd-placeholder-img" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="include/carousel_bg_future.jpg">
         <div class="container">
           <div class="carousel-caption text-right">
@@ -43,6 +44,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Previous and Next carousel item "buttons" -->
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -51,13 +54,10 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+  </div><!-- Carousel -->
 
 
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
+  <!-- This is the marketing style main content. -->
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
@@ -91,7 +91,7 @@
 
   </div><!-- /.container -->
 
-  <div class="container">
+  <div class="container"><!-- information area -->
   <div class="row">
   <div class="col-md-6">
     <h2>Style-Hub</h2>
@@ -127,5 +127,6 @@
   </main>
 
 <?php
+  // include footer
   require('footer.php');
 ?>

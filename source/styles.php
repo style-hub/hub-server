@@ -1,7 +1,8 @@
 <?php
-    require('header.php');
-    require('include/db_connect.inc.php');
-    $_SESSION['current_page'] = 'styles.php';
+  // Include header and database connection. Also set the current page session variable
+  require('header.php');
+  require('include/db_connect.inc.php');
+  $_SESSION['current_page'] = 'styles.php';
 ?>
 
       
@@ -15,15 +16,16 @@
             </p>
             <?php
               if(!$_SESSION['username']){
-              //if not logged in
-            ?>
-            <small>Login or Sign Up to submit styles.</small>
-            <?php
+                //if NOT logged in
+                ?>
+                <small>Login or Sign Up to submit styles.</small>
+                <?php
               } else {
-            ?>
-            <a href="style_submit.php" type="button" name="submit_style" class="btn btn-primary">Submit Style</a>
-            <br><small>We humbly ask you to TEST your style-xml before you upload.</small>
-            <?php
+                // if logged in
+                ?>
+                <a href="style_submit.php" type="button" name="submit_style" class="btn btn-primary">Submit Style</a>
+                <br><small>We humbly ask you to TEST your style-xml before you upload.</small>
+                <?php
               }
             ?>
 
@@ -40,10 +42,10 @@
             </div>
             <div class="col-auto">
               <select class="form-control form-control-sm" name="filter">
-                <option value="">No filter</option>
+                <option value="">No filter</option><!-- filter options -->
                 <?php
                   if($_SESSION['username']){
-                    //if logged in
+                    //if logged in, add "your styles" option
                     echo('<option value="username">Your Styles</option>');
                   }
                 ?>
@@ -57,13 +59,13 @@
               </select>
             </div>
             <div class="col-auto">
-              <select class="form-control form-control-sm" name="sort">
+              <select class="form-control form-control-sm" name="sort"><!-- sorting order options -->
                 <option value="">Newest first</option>
                 <option value="stylename">By Name</option>
                 <option value="id">Oldest first</option>
               </select>
             </div>
-            <div class="col-auto">
+            <div class="col-auto"><!-- submit button -->
               <button type="submit" name="search" class="btn btn-info btn-sm">Search/Apply</button>
             </div>      
             </div><!-- form-row -->
@@ -76,25 +78,28 @@
         This is the main area where styles are listed in a "grid" controlled by Bootstrap
         adaptively.
         -->
-      <div class="row">
 
+      <div class="row">
       <?php
+        // Test if the user has clicked the search/apply button
         if(isset($_POST['search'])){
           $searchstring = $_POST['searchtext'];
         }
+        // If no sort order is set
         if(!$_POST['sort']){
           $sort = " ORDER BY id DESC;";
-        } else {
+        } else { // if a sort order IS set
           if($_POST['sort']=='stylename'){
             $sort = " ORDER BY stylename;";
           } else if ($_POST['sort']=='id'){
             $sort = " ORDER BY id;";
           }
         }
+        // If no filter is selected
         if(!$_POST['filter']){
             $filter = "";
             $filtered = false;
-          } else {
+          } else { // if a filter IS selected
           if($_POST['filter']=='username'){
             $filter = ' AND byuser="'.$_SESSION['username'].'"';
           } else {
@@ -102,17 +107,20 @@
           }
           $filtered = true;
         }
+        // Create the SQL string for the list of styles to show
         if(!$searchstring){
             $sql = "SELECT * FROM styles WHERE id>0".$filter.$sort;
         } else {
           $filtered = true;
           $sql = "SELECT * FROM styles WHERE (styledescription LIKE '%".$searchstring."%' OR stylename LIKE '%".$searchstring."%') ".$filter.$sort;
         }
+        // Get the raw database result
         $result = mysqli_query($conn, $sql);
+        // count the number of rows
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                // Section below is repeated for every record in the database table
+              // Section below is repeated for every record in the database table
               $styleId = $row['id'];
               $styleName = $row['stylename'];
               $styleDescription = $row['styledescription'];
@@ -120,46 +128,53 @@
               $styleUrl = $row['stylexml'];
               $styleCreator = $row['stylecreator'];
               $styleUsername = $row['byuser'];
-         
+              ?>
 
-      ?>
+              <!-- This is the html code for each style record -->
+              <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                    <?php echo $styleName; 
+                      if($_SESSION['username'] == $styleUsername OR $_SESSION['moderator']){
+                        ?>
+                        <a href="style_edit.php?id=<?php echo $styleId ?>">
+                          <span class="badge badge-light">EDIT</span>
+                        </a>
+                        <?php
+                      }
+                    ?>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="<?php echo $imageUrl ?>"><img class="img-fluid" alt="Responsive image" src="<?php echo $imageUrl ?>"></button>
+                    <p class="card-text"><?php echo $styleDescription ?></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a class="btn btn-sm btn-outline-secondary" href="<?php echo $styleUrl ?>" role="button">XML</a>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('<?php echo $styleUrl ?>')">Copy</button>
+                      </div>
+                      <small class="text-muted"><?php 
+                      if($_SESSION['moderator']){
+                        echo ('<a href="users.php">'.$styleCreator.'</a>');
+                      } else {
+                        echo $styleCreator;
+                      }
+                      ?></small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Repeating style record code -->
 
-        <!-- This is the html code for each style record -->
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-          <div class="card-header">
-          <div class="d-flex justify-content-between align-items-center">
-            <?php echo $styleName; 
-              if($_SESSION['username'] == $styleUsername){
-            ?>
-            <a href="style_edit.php?id=<?php echo $styleId ?>">
-              <span class="badge badge-light">EDIT</span>
-            </a>
             <?php
-              }
-            ?>
-          </div></div>
-          <div class="card-body">
-            <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="<?php echo $imageUrl ?>"><img class="img-fluid" alt="Responsive image" src="<?php echo $imageUrl ?>"></button>
-            <p class="card-text"><?php echo $styleDescription ?></p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a class="btn btn-sm btn-outline-secondary" href="<?php echo $styleUrl ?>" role="button">XML</a>
-                <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('<?php echo $styleUrl ?>')">Copy</button>
-              </div>
-              <small class="text-muted"><?php echo $styleCreator ?></small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Repeating style record code -->
+            } 
+        } 
+      ?>
+      </div><!-- Row -->
 
-        <?php
-          } } 
-          
-        ?>
-      </div>
       <?php
+      // If the list is filtered show a coloured indicator with text.
       if($filtered){
         ?>
         <div class="container">
@@ -185,7 +200,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <img class="img-fluid rounded mx-auto d-block" src="">
+        <img class="img-fluid rounded mx-auto d-block modal_img" src="">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -203,11 +218,15 @@ $('#modal').on('show.bs.modal', function (event) {
 })
 </script>
 <!-- Preview Style Modal code ends-->
+
+<!-- This is a style specific footnote -->
 <div class="containter mt-3">
   <div class="row justify-content-md-center">
     <small class="text-muted mx-auto"><sup>1</sup> Copy button only works with https hosting.</small>
   </div>
 </div>
+
 <?php
-    require('footer.php');
+  // Include the footer
+  require('footer.php');
 ?>
