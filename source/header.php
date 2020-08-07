@@ -30,8 +30,8 @@
       }
 
       .modal_img {
-        max-width: 80%;
-        max-height: 70%;
+        max-width: 800px;
+        max-height: 600px;
       }
     </style>
     <!-- Custom styles for templates -->
