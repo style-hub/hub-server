@@ -31,7 +31,7 @@
 
       .modal_img {
         max-width: 80%;
-        max-height: 80%;
+        max-height: 70%;
       }
     </style>
     <!-- Custom styles for templates -->
