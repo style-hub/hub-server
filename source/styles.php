@@ -205,7 +205,7 @@ $('#modal').on('show.bs.modal', function (event) {
 <!-- Preview Style Modal code ends-->
 <div class="containter mt-3">
   <div class="row justify-content-md-center">
-    <small class="text-muted mx-auto"><sup>1</sup> Copy button only works with https hosting. Use rightclick and copy with the XML-button as workaround.</small>
+    <small class="text-muted mx-auto"><sup>1</sup> Copy button only works with https hosting.</small>
   </div>
 </div>
 <?php
