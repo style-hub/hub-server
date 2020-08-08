@@ -86,7 +86,7 @@
         if(!isset($_POST['search'])){
           // Do not show all records at once, make pages
           if(!isset($_GET['firstitem'])){
-            $startitem = 1;
+            $startitem = 0;
           } else {
             $startitem = $_GET['firstitem'];
           }
