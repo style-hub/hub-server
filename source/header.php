@@ -31,7 +31,7 @@
 
       .modal_img {
         max-width: 100%;
-        max-height: 600px;
+        max-height: 700px;
       }
     </style>
     <!-- Custom styles for templates -->
@@ -47,11 +47,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="styles.php">Style-Hub</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="layouts.php" tabindex="-1" aria-disabled="true">Layout-Hub</a>
+          <a class="nav-link" href="layouts.php">Layout-Hub</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Future-Hub</a>

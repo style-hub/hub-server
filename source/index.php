@@ -28,8 +28,8 @@
         <div class="container">
           <div class="carousel-caption">
             <h1>Layout Hub</h1>
-            <p>Preview and download QGIS layout templates. (not yet available)</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Coming Soon</a></p>
+            <p>Preview and download QGIS layout templates.</p>
+            <p><a class="btn btn-lg btn-primary" href="layouts.php" role="button">Go to the Layout-Hub</a></p>
           </div>
         </div>
       </div>
@@ -73,9 +73,8 @@
       <img class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140" src="include/marketing_bg_layouts.png">
         <h2>Layout Hub</h2>
         <p>Layout Templates are resources that can be shared between QGIS users as files.
-        The files are exported from the layout window and you import them by copying the
-        files to a folder in your QGIS profile.</p>
-        <p><a class="btn btn-secondary" href="layouts.php" role="button">Coming Soon &raquo;</a></p>
+        The files are exported from the layout window and you can open them from the QGIS browser.</p>
+        <p><a class="btn btn-secondary" href="layouts.php" role="button">Explore &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
       <img class="bd-placeholder-img rounded-circle" width="140" height="140" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140" src="include/marketing_bg_future.png">
@@ -106,6 +105,22 @@
     in jpg or png format that shows of your style in a nice way. Then submit it to the hub.</p>
     <p>Find out more about QGIS styles in the 
     <a href="https://docs.qgis.org/testing/en/docs/user_manual/style_library/index.html">official documentation</a>.</p>
+  </div>
+
+  <div class="col-md-6">
+    <h2>Layout-Hub</h2>
+    <p>Layouts in QGIS are really powerfull! When you have created a layout you want to share, save it
+    as a layout template from the QGIS layout application.</p>
+    <p>The layout templets are files with a "qpt" extension, that can be opende from the QGIS Browser.</p>
+    <p>You can also import the layouts to your own layout templates folder in your QGIS profile.</p>
+    <p>Layouts can be infinetly more complex than styles, so you need to look out for dependencies
+    for your layout that is required for it to work properly. Try and use SVG for graphics and "embed"
+    them in the layout. Use simple fonts in texts, and you should avoid using custom functions in your
+    expressions.</p>
+    <p>You could also use online fonts with css to make sure your style transfers ok. Se the "Postcard"
+    layout for an example.</p>
+    <p>Find out more about QGIS layouts in the 
+    <a href="https://docs.qgis.org/testing/en/docs/user_manual/print_composer/index.html">official documentation</a>.</p>
   </div>
 
   <div class="col-md-6">

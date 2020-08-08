@@ -16,6 +16,22 @@ CREATE TABLE hub.styles (
     popular INT(11)
 );
 
+CREATE TABLE hub.layouts (
+    id INT(9) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    layoutname VARCHAR(50) NOT NULL,
+    layoutcreator VARCHAR(50) NOT NULL,
+    layoutdescription VARCHAR(512) NOT NULL,
+    layoutqpt VARCHAR(255) NOT NULL,
+    layoutpreview VARCHAR(255) NOT NULL,
+    byuser VARCHAR(50),
+    istiny TINYINT(1),
+    issmall TINYINT(1),
+    ismedium TINYINT(1),
+    islarge TINYINT(1),
+    isscreen TINYINT(1),
+    popular INT(11)
+);
+
 CREATE TABLE hub.users (
     id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
