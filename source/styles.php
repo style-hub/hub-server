@@ -61,6 +61,7 @@
             <div class="col-auto">
               <select class="form-control form-control-sm" name="sort"><!-- sorting order options -->
                 <option value="">Newest first</option>
+                <option value="featured">Featured first &#9733;</option>
                 <option value="stylename">By Name</option>
                 <option value="id">Oldest first</option>
               </select>
@@ -93,6 +94,8 @@
             $sort = " ORDER BY stylename;";
           } else if ($_POST['sort']=='id'){
             $sort = " ORDER BY id;";
+          } else if ($_POST['sort']=='featured'){
+            $sort = " ORDER BY popular DESC, id DESC;";
           }
         }
         // If no filter is selected
@@ -128,6 +131,7 @@
               $styleUrl = $row['stylexml'];
               $styleCreator = $row['stylecreator'];
               $styleUsername = $row['byuser'];
+              $featured = $row['popular'];
               ?>
 
               <!-- This is the html code for each style record -->
@@ -135,7 +139,10 @@
                 <div class="card mb-4 shadow-sm">
                   <div class="card-header">
                     <div class="d-flex justify-content-between align-items-center">
-                    <?php echo $styleName; 
+                    <?php echo($styleName);
+                      if($featured>0){
+                        echo(' &#9733;');
+                      } 
                       if($_SESSION['username'] == $styleUsername OR $_SESSION['moderator']){
                         ?>
                         <a href="style_edit.php?id=<?php echo $styleId ?>">
@@ -179,7 +186,7 @@
         ?>
         <div class="container">
           <div class="row bg-info justify-content-md-center">
-            <small class="text-light">This is a filtered list.</small>
+            <small class="text-light">This is a filtered list. <a class="text-light" href="styles.php">[reset]</a></small>
           </div>
         </div>
         <?php

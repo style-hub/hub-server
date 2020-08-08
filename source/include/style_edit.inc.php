@@ -24,6 +24,11 @@ $istext = $_POST['istext'];
 $islabel = $_POST['islabel'];
 $ispatch = $_POST['ispatch'];
 $license = $_POST['license'];
+if($_SESSION['moderator']){ // Only for moderators
+    $featured = $_POST['styleFeatured'];
+} else {
+    $featured = 0;
+}
 
 if(empty($style_name) || empty($style_creator) || empty($style_description)){
     header("Location: ../style_edit.php?error=incomplete");
@@ -32,14 +37,14 @@ if(empty($style_name) || empty($style_creator) || empty($style_description)){
 
 
 // Update Database
-$sql = "UPDATE styles SET stylename=?, stylecreator=?, styledescription=?, byuser=?, ismarker=?, isline=?, isfill=?, isramp=?, istext=?, islabel=?, ispatch=? WHERE id=?;";
+$sql = "UPDATE styles SET stylename=?, stylecreator=?, styledescription=?, byuser=?, ismarker=?, isline=?, isfill=?, isramp=?, istext=?, islabel=?, ispatch=?, popular=? WHERE id=?;";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $sql)) {
    header("Location: ../style_edit.php?error=sql-error");
    exit();
 } else {
    $pwdhash = password_hash($pwd1, PASSWORD_BCRYPT);
-    mysqli_stmt_bind_param($stmt, "ssssiiiiiiii", $style_name, $style_creator, $style_description, $_SESSION['username'], $ismarker, $isline, $isfill, $isramp, $istext, $islabel, $ispatch, $id);
+    mysqli_stmt_bind_param($stmt, "ssssiiiiiiiii", $style_name, $style_creator, $style_description, $_SESSION['username'], $ismarker, $isline, $isfill, $isramp, $istext, $islabel, $ispatch, $featured, $id);
     mysqli_stmt_execute($stmt);
 }
    

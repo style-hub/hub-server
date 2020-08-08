@@ -28,6 +28,7 @@
             $istext = $row['istext'];
             $islabel = $row['islabel'];
             $ispatch = $row['ispatch'];
+            $styleFeatured = $row['pupular'];
     }
 ?>
 
@@ -115,6 +116,13 @@
             </div>
             <small id="descriptionHelp" class="form-text text-muted">It will be easier for users if the style files contain only related styles.</small>
             </div>
+            <?php if($_SESSION['moderator']){ // Only show for moderators ?> 
+            <div class="form-group">
+                <label for="submitDescription">Featured styles [9=high, 1=low, 0=not featured]:</label>
+                <input type="text" class="form-control" id="submitFeatured" maxlength="1" aria-describedby="submitHelp" name="styleFeatured" <?php echo('value="'.$styleFeatured.'"'); ?>>
+                <small id="submitHelp" class="form-text text-muted">Featured styles have a higher number (0-9).</small>
+            </div><!-- form-group"-->
+            <?php } ?>
             <input type="hidden" name="id" value="<?php echo($styleId); ?>">
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             <button type="submit" class="btn btn-danger float-right" name="delete">Delete</button>

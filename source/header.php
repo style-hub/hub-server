@@ -30,7 +30,7 @@
       }
 
       .modal_img {
-        max-width: 800px;
+        max-width: 100%;
         max-height: 600px;
       }
     </style>
