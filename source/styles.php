@@ -92,7 +92,7 @@
           }
           $iteminterval = 30;
           $pages = " LIMIT ".$startitem.", ".$iteminterval;
-          $sql = "SELECT * FROM styles WHERE id>0 ".$pages.";";
+          $sql = "SELECT * FROM styles WHERE id>0 ORDER BY id DESC ".$pages.";";
         } else { // if the search button has been pressed then...
         $searchstring = $_POST['searchtext'];
         $pages = ";"; // no pages when searching
