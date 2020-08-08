@@ -35,7 +35,7 @@
 
         <!-- Searching database form -->
         <div class="container mb-5">
-          <form action="#" method="POST">
+          <form action="styles.php" method="POST">
             <div class="row form-row justify-content-md-center">
             <div class="col-auto">
               <input type="text" class="form-control form-control-sm" id="searchtext" name="searchtext" placeholder="Search for ...">
@@ -82,10 +82,21 @@
 
       <div class="row">
       <?php
-        // Test if the user has clicked the search/apply button
-        if(isset($_POST['search'])){
-          $searchstring = $_POST['searchtext'];
-        }
+        // Test if the user has NOT clicked the search/apply button
+        if(!isset($_POST['search'])){
+          // Do not show all records at once, make pages
+          if(!isset($_GET['firstitem'])){
+            $startitem = 1;
+          } else {
+            $startitem = $_GET['firstitem'];
+          }
+          $iteminterval = 30;
+          $pages = " LIMIT ".$startitem.", ".$iteminterval;
+          $sql = "SELECT * FROM styles WHERE id>0 ".$pages.";";
+        } else { // if the search button has been pressed then...
+        $searchstring = $_POST['searchtext'];
+        $pages = ";"; // no pages when searching
+
         // If no sort order is set
         if(!$_POST['sort']){
           $sort = " ORDER BY id DESC;";
@@ -110,6 +121,7 @@
           }
           $filtered = true;
         }
+      
         // Create the SQL string for the list of styles to show
         if(!$searchstring){
             $sql = "SELECT * FROM styles WHERE id>0".$filter.$sort;
@@ -117,12 +129,18 @@
           $filtered = true;
           $sql = "SELECT * FROM styles WHERE (styledescription LIKE '%".$searchstring."%' OR stylename LIKE '%".$searchstring."%') ".$filter.$sort;
         }
+        } // end of search handeling sql
+
         // Get the raw database result
         $result = mysqli_query($conn, $sql);
         // count the number of rows
         $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
+            // Set item counter
+            $itemscounter=0;
             while($row = mysqli_fetch_assoc($result)) {
+              // count the record as one item
+              ++$itemscounter;
               // Section below is repeated for every record in the database table
               $styleId = $row['id'];
               $styleName = $row['stylename'];
@@ -161,6 +179,7 @@
                         <a class="btn btn-sm btn-outline-secondary" href="<?php echo $styleUrl ?>" role="button">XML</a>
                         <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('<?php echo $styleUrl ?>')">Copy</button>
                       </div>
+
                       <small class="text-muted"><?php 
                       if($_SESSION['moderator']){
                         echo ('<a href="users.php">'.$styleCreator.'</a>');
@@ -181,6 +200,32 @@
       </div><!-- Row -->
 
       <?php
+      // Page navigation
+      if(!isset($_POST['search'])){ // only do page navigation if search or filtering is not applied
+      ?>
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <!-- navigation -->
+            <?php 
+            if($startitem>$iteminterval){
+              echo('<a href="styles.php?firstitem='.($startitem-$iteminterval).'">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              </svg></a>');
+            }
+            echo(' Page '.round(($startitem)/$iteminterval).' ');
+            if($itemscounter==$iteminterval){
+              echo('<a href="styles.php?firstitem='.($startitem+$iteminterval).'">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg></a>');
+            }
+            ?>
+          </div>
+        </div>
+      <?php
+      } // End page navigation
+
       // If the list is filtered show a coloured indicator with text.
       if($filtered){
         ?>
