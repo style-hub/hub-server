@@ -33,6 +33,10 @@
         max-width: 100%;
         max-height: 700px;
       }
+      .carousel-inner img{
+        object-fit: cover;
+        overflow: hidden;
+      }
     </style>
     <!-- Custom styles for templates -->
     <link href="carousel.css" rel="stylesheet">
