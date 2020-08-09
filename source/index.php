@@ -111,8 +111,8 @@
     <h2>Layout-Hub</h2>
     <p>Layouts in QGIS are really powerfull! When you have created a layout you want to share, save it
     as a layout template from the QGIS layout application.</p>
-    <p>The layout templets are files with a "qpt" extension, that can be opende from the QGIS Browser.</p>
-    <p>You can also import the layouts to your own layout templates folder in your QGIS profile.</p>
+    <p>The layout templets are files with a "qpt" extension, that can be opened from the QGIS Browser.</p>
+    <p>You can also save the layouts to your own layout templates folder in your QGIS profile.</p>
     <p>Layouts can be infinetly more complex than styles, so you need to look out for dependencies
     for your layout that is required for it to work properly. Try and use SVG for graphics and "embed"
     them in the layout. Use simple fonts in texts, and you should avoid using custom functions in your
