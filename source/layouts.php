@@ -12,10 +12,9 @@
           <div class="container">
             <h1>Layout Hub</h1>
             <p class="lead text-muted">Collections of free to use QGIS layout qpt-files to download and import. 
-              Save the downloaded qpt-files in your QGIS profile "composer_templates" folder.
+            You can open the layouts from the QGIS Browser, or save them in the profile templates folder.
             </p>
             <small>(Settings-User Profiles-Open Active Profile Folder)</small>
-            <p class="lead text-muted">You can also open the layouts from the QGIS Browser.</p>
             <?php
               if(!$_SESSION['username']){
                 //if NOT logged in
