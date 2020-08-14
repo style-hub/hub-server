@@ -16,6 +16,7 @@ $issmall = $_POST['issmall'];
 $ismedium = $_POST['ismedium'];
 $islarge = $_POST['islarge'];
 $isscreen = $_POST['isscreen'];
+$iselement = $_POST['iselement'];
 $license = $_POST['license'];
 $images_dir = "../layouts/images/";
 $layout_dir = "../layouts/resources/";
@@ -69,13 +70,13 @@ if(in_array($qpt_ext,$allowed_qpt) && in_array($img_ext,$allowed_img)){
 }
 
 // Update Database
-$sql = "INSERT INTO layouts (layoutname, layoutcreator, layoutdescription, layoutqpt, layoutpreview, byuser, istiny, issmall, ismedium, islarge, isscreen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+$sql = "INSERT INTO layouts (layoutname, layoutcreator, layoutdescription, layoutqpt, layoutpreview, byuser, istiny, issmall, ismedium, islarge, isscreen, iselement) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $sql)) {
    header("Location: ../layout_submit.php?error=sql-error");
    exit();
 } else {
-    mysqli_stmt_bind_param($stmt, "ssssssiiiii", $layout_name, $layout_creator, $layout_description, $qpt_destination, $img_destination, $_SESSION['username'], $istiny, $issmall, $ismedium, $islarge, $isscreen);
+    mysqli_stmt_bind_param($stmt, "ssssssiiiiii", $layout_name, $layout_creator, $layout_description, $qpt_destination, $img_destination, $_SESSION['username'], $istiny, $issmall, $ismedium, $islarge, $isscreen, $iselement);
     mysqli_stmt_execute($stmt);
 }
    

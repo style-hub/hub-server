@@ -21,6 +21,7 @@ $issmall = $_POST['issmall'];
 $ismedium = $_POST['ismedium'];
 $islarge = $_POST['islarge'];
 $isscreen = $_POST['isscreen'];
+$iselement = $_POST['iselement'];
 $license = $_POST['license'];
 if($_SESSION['moderator']){ // Only for moderators
     $featured = $_POST['layoutFeatured'];
@@ -35,13 +36,13 @@ if(empty($layout_name) || empty($layout_creator) || empty($layout_description)){
 
 
 // Update Database
-$sql = "UPDATE layouts SET layoutname=?, layoutcreator=?, layoutdescription=?, byuser=?, istiny=?, issmall=?, ismedium=?, islarge=?, isscreen=?, popular=? WHERE id=?;";
+$sql = "UPDATE layouts SET layoutname=?, layoutcreator=?, layoutdescription=?, byuser=?, istiny=?, issmall=?, ismedium=?, islarge=?, isscreen=?, iselement=?, popular=? WHERE id=?;";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $sql)) {
    header("Location: ../layout_edit.php?error=sql-error");
    exit();
 } else {
-    mysqli_stmt_bind_param($stmt, "ssssiiiiiii", $layout_name, $layout_creator, $layout_description, $_SESSION['username'], $istiny, $itsmall, $ismedium, $islarge, $isscreen, $featured, $id);
+    mysqli_stmt_bind_param($stmt, "ssssiiiiiiii", $layout_name, $layout_creator, $layout_description, $_SESSION['username'], $istiny, $itsmall, $ismedium, $islarge, $isscreen, $iselement, $featured, $id);
     mysqli_stmt_execute($stmt);
 }
    

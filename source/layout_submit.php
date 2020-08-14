@@ -85,6 +85,10 @@
                     <input class="form-check-input" type="checkbox" id="isscreen" value="1" name="isscreen">
                     <label class="form-check-label" for="isscreen">Screen (for web/digital)</label>
                 </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="iselement" value="1" name="iselement">
+                    <label class="form-check-label" for="isscreen">Layout Item (part of layout)</label>
+                </div>
             </div>
             <small id="descriptionHelp" class="form-text text-muted">It will be easier for users 
             if the layout files do not use elaborate fonts, and only single pages.</small>

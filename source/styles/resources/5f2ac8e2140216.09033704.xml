@@ -1,0 +1,115 @@
+<!DOCTYPE qgis_style>
+<qgis_style version="2">
+  <symbols>
+    <symbol alpha="1" tags="Colorful,Random" name="Fantasia" clip_to_extent="1" type="fill" force_rhr="0">
+      <layer pass="0" class="SimpleFill" enabled="1" locked="0">
+        <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="color" v="209,149,255,109"/>
+        <prop k="joinstyle" v="bevel"/>
+        <prop k="offset" v="0,0"/>
+        <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="offset_unit" v="MM"/>
+        <prop k="outline_color" v="119,116,104,154"/>
+        <prop k="outline_style" v="no"/>
+        <prop k="outline_width" v="0"/>
+        <prop k="outline_width_unit" v="MM"/>
+        <prop k="style" v="solid"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option value="" name="name" type="QString"/>
+            <Option name="properties"/>
+            <Option value="collection" name="type" type="QString"/>
+          </Option>
+        </data_defined_properties>
+      </layer>
+      <layer pass="0" class="PointPatternFill" enabled="1" locked="0">
+        <prop k="displacement_x" v="0"/>
+        <prop k="displacement_x_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="displacement_x_unit" v="MM"/>
+        <prop k="displacement_y" v="0"/>
+        <prop k="displacement_y_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="displacement_y_unit" v="MM"/>
+        <prop k="distance_x" v="8"/>
+        <prop k="distance_x_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="distance_x_unit" v="MM"/>
+        <prop k="distance_y" v="8"/>
+        <prop k="distance_y_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="distance_y_unit" v="MM"/>
+        <prop k="offset_x" v="0"/>
+        <prop k="offset_x_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="offset_x_unit" v="MM"/>
+        <prop k="offset_y" v="0"/>
+        <prop k="offset_y_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="offset_y_unit" v="MM"/>
+        <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+        <prop k="outline_width_unit" v="MM"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option value="" name="name" type="QString"/>
+            <Option name="properties"/>
+            <Option value="collection" name="type" type="QString"/>
+          </Option>
+        </data_defined_properties>
+        <symbol alpha="1" name="@Fantasia@1" clip_to_extent="1" type="marker" force_rhr="0">
+          <layer pass="0" class="EllipseMarker" enabled="1" locked="0">
+            <prop k="angle" v="0"/>
+            <prop k="color" v="149,183,255,109"/>
+            <prop k="horizontal_anchor_point" v="1"/>
+            <prop k="joinstyle" v="bevel"/>
+            <prop k="offset" v="0,0"/>
+            <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+            <prop k="offset_unit" v="MM"/>
+            <prop k="outline_color" v="35,35,35,83"/>
+            <prop k="outline_style" v="no"/>
+            <prop k="outline_width" v="0"/>
+            <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+            <prop k="outline_width_unit" v="MM"/>
+            <prop k="size" v="2"/>
+            <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+            <prop k="size_unit" v="MM"/>
+            <prop k="symbol_height" v="1.5"/>
+            <prop k="symbol_height_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+            <prop k="symbol_height_unit" v="MM"/>
+            <prop k="symbol_name" v="diamond"/>
+            <prop k="symbol_width" v="2"/>
+            <prop k="symbol_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+            <prop k="symbol_width_unit" v="MM"/>
+            <prop k="vertical_anchor_point" v="1"/>
+            <data_defined_properties>
+              <Option type="Map">
+                <Option value="" name="name" type="QString"/>
+                <Option name="properties" type="Map">
+                  <Option name="angle" type="Map">
+                    <Option value="true" name="active" type="bool"/>
+                    <Option value="rand(0,360)" name="expression" type="QString"/>
+                    <Option value="3" name="type" type="int"/>
+                  </Option>
+                  <Option name="fillColor" type="Map">
+                    <Option value="true" name="active" type="bool"/>
+                    <Option value="set_color_part(  @symbol_color ,&#xa; 'hue',rand(0,360))" name="expression" type="QString"/>
+                    <Option value="3" name="type" type="int"/>
+                  </Option>
+                  <Option name="height" type="Map">
+                    <Option value="true" name="active" type="bool"/>
+                    <Option value="randf(10,20)" name="expression" type="QString"/>
+                    <Option value="3" name="type" type="int"/>
+                  </Option>
+                  <Option name="width" type="Map">
+                    <Option value="true" name="active" type="bool"/>
+                    <Option value="randf(8,20)" name="expression" type="QString"/>
+                    <Option value="3" name="type" type="int"/>
+                  </Option>
+                </Option>
+                <Option value="collection" name="type" type="QString"/>
+              </Option>
+            </data_defined_properties>
+          </layer>
+        </symbol>
+      </layer>
+    </symbol>
+  </symbols>
+  <colorramps/>
+  <textformats/>
+  <labelsettings/>
+  <legendpatchshapes/>
+</qgis_style>

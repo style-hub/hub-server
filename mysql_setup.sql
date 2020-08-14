@@ -29,6 +29,7 @@ CREATE TABLE hub.layouts (
     ismedium TINYINT(1),
     islarge TINYINT(1),
     isscreen TINYINT(1),
+    iselement TINYINT(1),
     popular INT(11)
 );
 

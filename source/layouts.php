@@ -54,6 +54,7 @@
                 <option value="issmall">Small (A4/Letter)</option>
                 <option value="ismedium">Medium (A2-A3 / Tabloid - ANSI C</option>
                 <option value="islarge">Large</option>
+                <option value="iselement">Layout Item</option>
                 <option value="isscreen">Screen (for web/digital)</option>
               </select>
             </div>

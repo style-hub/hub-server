@@ -1,0 +1,106 @@
+<Layout printResolution="300" units="mm" worldFileMap="{c8164c83-5612-4005-a681-f9596815ff8d}" name="postcard">
+ <Snapper snapToGuides="1" tolerance="5" snapToItems="1" snapToGrid="0"/>
+ <Grid resUnits="mm" resolution="10" offsetY="0" offsetUnits="mm" offsetX="0"/>
+ <PageCollection>
+  <symbol type="fill" force_rhr="0" name="" clip_to_extent="1" alpha="1">
+   <layer pass="0" locked="0" enabled="1" class="SimpleFill">
+    <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+    <prop v="255,255,255,255" k="color"/>
+    <prop v="miter" k="joinstyle"/>
+    <prop v="0,0" k="offset"/>
+    <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+    <prop v="MM" k="offset_unit"/>
+    <prop v="35,35,35,255" k="outline_color"/>
+    <prop v="no" k="outline_style"/>
+    <prop v="0.26" k="outline_width"/>
+    <prop v="MM" k="outline_width_unit"/>
+    <prop v="solid" k="style"/>
+    <data_defined_properties>
+     <Option type="Map">
+      <Option type="QString" name="name" value=""/>
+      <Option name="properties"/>
+      <Option type="QString" name="type" value="collection"/>
+     </Option>
+    </data_defined_properties>
+   </layer>
+  </symbol>
+  <LayoutItem position="0,0,mm" excludeFromExports="0" blendMode="0" itemRotation="0" frame="false" opacity="1" background="true" templateUuid="{42e37d42-b3a0-4e9b-b52c-bb7de4f0e579}" positionLock="false" groupUuid="" outlineWidthM="0.3,mm" frameJoinStyle="miter" uuid="{42e37d42-b3a0-4e9b-b52c-bb7de4f0e579}" positionOnPage="0,0,mm" referencePoint="0" type="65638" visibility="1" id="" size="148,105,mm" zValue="0">
+   <FrameColor green="0" red="0" blue="0" alpha="255"/>
+   <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+   <LayoutObject>
+    <dataDefinedProperties>
+     <Option type="Map">
+      <Option type="QString" name="name" value=""/>
+      <Option name="properties"/>
+      <Option type="QString" name="type" value="collection"/>
+     </Option>
+    </dataDefinedProperties>
+    <customproperties/>
+   </LayoutObject>
+   <symbol type="fill" force_rhr="0" name="" clip_to_extent="1" alpha="1">
+    <layer pass="0" locked="0" enabled="1" class="SimpleFill">
+     <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+     <prop v="255,255,255,255" k="color"/>
+     <prop v="miter" k="joinstyle"/>
+     <prop v="0,0" k="offset"/>
+     <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+     <prop v="MM" k="offset_unit"/>
+     <prop v="35,35,35,255" k="outline_color"/>
+     <prop v="no" k="outline_style"/>
+     <prop v="0.26" k="outline_width"/>
+     <prop v="MM" k="outline_width_unit"/>
+     <prop v="solid" k="style"/>
+     <data_defined_properties>
+      <Option type="Map">
+       <Option type="QString" name="name" value=""/>
+       <Option name="properties"/>
+       <Option type="QString" name="type" value="collection"/>
+      </Option>
+     </data_defined_properties>
+    </layer>
+   </symbol>
+  </LayoutItem>
+  <GuideCollection visible="1"/>
+ </PageCollection>
+ <LayoutItem position="3.14743,79.4997,mm" excludeFromExports="0" halign="8" blendMode="0" itemRotation="0" frame="false" opacity="1" background="false" templateUuid="{92b99504-0221-42a7-9df6-4d0c7f67378b}" positionLock="false" groupUuid="" marginX="0" outlineWidthM="0.3,mm" frameJoinStyle="miter" uuid="{92b99504-0221-42a7-9df6-4d0c7f67378b}" marginY="0" valign="32" positionOnPage="3.14743,79.4997,mm" referencePoint="0" type="65641" visibility="1" id="" htmlState="1" size="142.773,23.6076,mm" zValue="2" labelText="&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Sriracha&amp;display=swap&quot; rel=&quot;stylesheet&quot;> &#xa;    &lt;style>&#xa;      body {&#xa;          font-family: 'Sriracha', cursive;&#xa;          text-align: right;&#xa;          text-shadow: 4px 4px 8px #0009  ;&#xa;          -webkit-text-stroke-width: 3px;&#xa;          -webkit-text-stroke-color: #0005;&#xa;      }&#xa;    &lt;/style>&#xa;&#xa;[% @title %]&amp;nbsp;">
+  <FrameColor green="0" red="0" blue="0" alpha="255"/>
+  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option type="QString" name="name" value=""/>
+     <Option name="properties"/>
+     <Option type="QString" name="type" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties>
+    <property value="title" key="variableNames"/>
+    <property value="Postcard Title" key="variableValues"/>
+   </customproperties>
+  </LayoutObject>
+  <LabelFont description="Fira Sans,40,-1,5,50,0,0,0,0,0" style=""/>
+  <FontColor green="230" red="226" blue="238" alpha="255"/>
+ </LayoutItem>
+ <LayoutItem position="-0.502463,0,mm" excludeFromExports="0" followPresetName="" blendMode="0" itemRotation="0" frame="false" opacity="1" drawCanvasItems="true" background="true" labelMargin="0,mm" templateUuid="{c8164c83-5612-4005-a681-f9596815ff8d}" positionLock="false" groupUuid="" outlineWidthM="0.3,mm" keepLayerSet="false" frameJoinStyle="miter" uuid="{c8164c83-5612-4005-a681-f9596815ff8d}" mapFlags="0" isTemporal="0" positionOnPage="-0.502463,0,mm" referencePoint="0" mapRotation="0" type="65639" visibility="1" id="" size="148,105,mm" zValue="1" followPreset="false">
+  <FrameColor green="0" red="0" blue="0" alpha="255"/>
+  <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+  <LayoutObject>
+   <dataDefinedProperties>
+    <Option type="Map">
+     <Option type="QString" name="name" value=""/>
+     <Option name="properties"/>
+     <Option type="QString" name="type" value="collection"/>
+    </Option>
+   </dataDefinedProperties>
+   <customproperties/>
+  </LayoutObject>
+  <Extent xmin="2736588.64543182775378227" ymin="-2265686.19009352987632155" ymax="3714373.38093792321160436" xmax="11165624.99317139945924282"/>
+  <LayerSet/>
+  <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
+  <labelBlockingItems/>
+ </LayoutItem>
+ <customproperties>
+  <property value="png" key="atlasRasterFormat"/>
+ </customproperties>
+ <Atlas filterFeatures="0" sortFeatures="0" pageNameExpression="" enabled="0" coverageLayer="" filenamePattern="'output_'||@atlas_featurenumber" hideCoverage="0"/>
+</Layout>
