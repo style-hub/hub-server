@@ -90,7 +90,7 @@
           } else {
             $startitem = $_GET['firstitem'];
           }
-          $iteminterval = 3;
+          $iteminterval = 30;
           $pages = " LIMIT ".$startitem.", ".$iteminterval;
           $sql = "SELECT * FROM layouts WHERE id>0 ORDER BY id DESC ".$pages.";";
         } else { // if the search button has been pressed then...
