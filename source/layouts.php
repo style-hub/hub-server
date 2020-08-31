@@ -90,7 +90,7 @@
           } else {
             $startitem = $_GET['firstitem'];
           }
-          $iteminterval = 30;
+          $iteminterval = 3;
           $pages = " LIMIT ".$startitem.", ".$iteminterval;
           $sql = "SELECT * FROM layouts WHERE id>0 ORDER BY id DESC ".$pages.";";
         } else { // if the search button has been pressed then...
@@ -206,13 +206,13 @@
           <div class="row justify-content-md-center">
             <!-- navigation -->
             <?php 
-            if($startitem>$iteminterval){
+            if($startitem>=$iteminterval){
               echo('<a href="layouts.php?firstitem='.($startitem-$iteminterval).'">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
               </svg></a>');
             }
-            echo(' Page '.round(($startitem)/$iteminterval).' ');
+            echo(' Page '.round(($startitem)/$iteminterval+1).' ');
             if($itemscounter==$iteminterval){
               echo('<a href="layouts.php?firstitem='.($startitem+$iteminterval).'">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
